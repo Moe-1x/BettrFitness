@@ -18,7 +18,7 @@ const Reviews = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <div className="absolute pl-4 pb-4 bottom-0 left-0 text-white text-[16px] font-sans font-medium">
+            <div className="absolute pl-5 pb-4 bottom-0 left-0 text-white text-[16px] font-sans font-medium">
               Seif El-Masry - Egypt{" "}
             </div>
           </div>
