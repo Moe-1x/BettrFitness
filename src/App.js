@@ -30,9 +30,10 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to="/en" replace />} />{" "}
+        {/* Redirect root to /en */}
         <Route path="/en" element={<EnglishVersion />} />
         <Route path="/ar" element={<ArabicVersion />} />
-        <Route path="/" element={<NotFoundEn />} /> {/* English 404 */}
         <Route path="/en/*" element={<NotFoundEn />} /> {/* English 404 */}
         <Route path="/ar/*" element={<NotFoundAr />} /> {/* Arabic 404 */}
         <Route path="*" element={<Navigate to="/en" replace />} />{" "}
