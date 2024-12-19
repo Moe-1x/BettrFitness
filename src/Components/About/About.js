@@ -8,10 +8,10 @@ const About = () => {
       id="About"
       className="container mt-[166px] py-16 flex max-[970px]:flex-col max-[970px]:items-center"
     >
-      <div className="relative before:absolute before:w-full before:max-h-[632px] before:h-full before:bg-primary before:-z-10 before:right-[3%] before:top-[3%] max-[970px]:hidden">
+      <div className="relative max-[1025px]:before:hidden before:absolute before:w-full before:max-h-[632px] before:h-full max-[1355px]:before:hidden max-[1299px]:before:block  before:bg-primary before:-z-10 before:right-[3%] before:top-[3%] max-[970px]:hidden">
         <img
           draggable="false"
-          className="min-h-[632px] max-[970px]:mb-10 max-[970px]:w-screen min-w-[458px] max-[970px]:min-h-[400px] max-[970px]:min-w-[300px]"
+          className="min-h-[632px] max-[1299px]:rounded-none max-[1025px]:rounded-lg max-[970px]:mb-10 max-[970px]:w-screen max-[1355px]:rounded-lg min-w-[458px] max-[970px]:min-h-[400px] max-[970px]:min-w-[300px]"
           src={Images.aboutImage}
           alt="personal photo"
         />
