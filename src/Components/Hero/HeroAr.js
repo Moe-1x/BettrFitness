@@ -49,10 +49,10 @@ const HeroAr = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center items-center md:w-full md:mt-8">
-        <div className="overflow-hidden right-0 w-full mt-4 h-[400px] max-[970px]:w-full rounded-lg">
+      <div className="flex justify-center h-full items-center md:w-full md:mt-8">
+        <div className="overflow-hidden max-[970px]:px-5 max-[970px]:mr-0 mr-[50px] h-full right-0 w-full mt-4 max-[970px]:w-full ">
           <iframe
-            className="w-full h-full object-cover"
+            className="w-full max-h-[400px] min-h-[400px] object-cover rounded-lg"
             src="https://www.youtube.com/embed/example3"
             autoPlay
             loop

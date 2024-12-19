@@ -30,7 +30,7 @@ const JourneyAr = () => {
       </h2>
 
       {/* Relative Container for Steps */}
-      <div className="relative max-[970px]:min-h-0 min-h-[3000px]">
+      <div className="relative max-[1025px]:min-h-[0px] min-h-[3000px]">
         {" "}
         {/* Adjust height appropriately */}
         {/* Center Vertical Line */}
