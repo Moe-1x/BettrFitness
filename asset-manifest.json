@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BettrFitness/static/css/main.2153d813.css",
+    "main.js": "/BettrFitness/static/js/main.9c26119c.js",
+    "index.html": "/BettrFitness/index.html",
+    "main.2153d813.css.map": "/BettrFitness/static/css/main.2153d813.css.map",
+    "main.9c26119c.js.map": "/BettrFitness/static/js/main.9c26119c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2153d813.css",
+    "static/js/main.9c26119c.js"
+  ]
+}
