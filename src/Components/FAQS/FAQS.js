@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "How will we communicate?",
     answer:
-      "Depending on the package you choose, we’ll communicate through video check-ins or only WhatsApp. **I make sure to stay connected** so you always feel supported.",
+      "Depending on the package you choose, we’ll communicate through video check-ins or only WhatsApp. *I make sure to stay connected* so you always feel supported.",
   },
   {
     question: "What does a typical check-in look like?",
@@ -49,6 +49,11 @@ const FAQS = () => {
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  // Function to convert '*' into <strong> for bold text
+  const formatAnswer = (answer) => {
+    return answer.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
   };
 
   return (
@@ -73,7 +78,11 @@ const FAQS = () => {
             </button>
             {openIndex === index && (
               <div className="pb-4 text-gray-600 text-[16px]">
-                <p dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: formatAnswer(faq.answer), // Process and inject formatted answer
+                  }}
+                ></p>
               </div>
             )}
           </div>

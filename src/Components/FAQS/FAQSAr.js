@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "هنكون بنكلم بعض إزاي؟",
     answer:
-      "على حسب الباقة اللي اخترتها، هنكون بنتواصل عن طريق مكالمات فيديو أو واتساب فقط. **بضمن لك إني أكون دايمًا متواصل معاك** عشان تحس بالدعم طول الوقت.",
+      "على حسب الباقة اللي اخترتها، هنكون بنتواصل عن طريق مكالمات فيديو أو واتساب فقط. *بضمن لك إني أكون دايمًا متواصل معاك* عشان تحس بالدعم طول الوقت.",
   },
   {
     question: "إيه شكل المتابعة المعتادة؟",
@@ -49,6 +49,9 @@ const FAQSAr = () => {
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+  const formatAnswer = (answer) => {
+    return answer.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
   };
 
   return (
@@ -74,7 +77,11 @@ const FAQSAr = () => {
             </button>
             {openIndex === index && (
               <div className="pb-4 text-gray-600 text-[16px]">
-                <p dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: formatAnswer(faq.answer), // Process and inject formatted answer
+                  }}
+                ></p>{" "}
               </div>
             )}
           </div>
