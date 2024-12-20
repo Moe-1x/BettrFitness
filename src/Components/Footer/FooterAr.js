@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const FooterAr = () => {
@@ -100,28 +101,12 @@ const FooterAr = () => {
             <h3 className="text-[36px] font-semibold mb-4">السياسات</h3>
             <ul className=" text-[20px]">
               <li>
-                <a
-                  href="/privacy-policy"
+                <Link
+                  to="/ar/policies"
                   className="transition-all ease-in-out duration-700 hover:text-primary"
                 >
-                  سياسة الخصوصية
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/terms-of-service"
-                  className="transition-all ease-in-out duration-700 hover:text-primary"
-                >
-                  شروط الخدمة
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/cookie-policy"
-                  className="transition-all ease-in-out duration-700 hover:text-primary"
-                >
-                  سياسة الكوكيز
-                </a>
+                  سياسات الخدمة
+                </Link>
               </li>
             </ul>
             <div className="mt-6 text-[16px]">

@@ -25,6 +25,8 @@ import FAQSAr from "./Components/FAQS/FAQSAr";
 import FooterAr from "./Components/Footer/FooterAr";
 import NotFoundEn from "./Components/404/NotFound";
 import NotFoundAr from "./Components/404/NotFoundAr";
+import Policies from "./Components/Privacy/Policies";
+import PoliciesAr from "./Components/Privacy/PoliciesAr";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
         <Route path="/en/*" element={<NotFoundEn />} /> {/* English 404 */}
         <Route path="/ar/*" element={<NotFoundAr />} /> {/* Arabic 404 */}
         <Route path="*" element={<Navigate to="/en" replace />} />{" "}
+        <Route path="/en/policies" element={<Policies />} />{" "}
+        <Route path="/ar/policies" element={<PoliciesAr />} />{" "}
         {/* Default to English */}
       </Routes>
     </Router>

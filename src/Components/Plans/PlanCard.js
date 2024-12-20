@@ -30,7 +30,7 @@ const PlanCard = ({
   };
 
   return (
-    <div className="w-[100%] flex flex-col gap-5 py-8 px-8 min-h-[800px] rounded-[32px] border-[#BCBCBC] border-2 border-solid relative">
+    <div className="w-[calc(100%-30px)] mx-auto flex flex-col gap-5 py-8 px-8 min-h-[800px]  rounded-[32px] border-[#BCBCBC] border-2 border-solid relative">
       {(cardIndex === 1 || cardIndex === 2) && selectedPlan === "3 Month" && (
         <div className="absolute top-[-10px] rounded-tl-[32px] rounded-tr-[32px] left-0 w-full text-center text-white bg-primary py-2 font-bold">
           Save 35% of your money!
@@ -61,7 +61,7 @@ const PlanCard = ({
                 onClick={() => handleButtonClick(label)}
                 className={`w-[120px] h-[42px]  transition-all ease-in-out duration-700 ${
                   label === selectedPlan
-                    ? "bg-primary max-[970px]:hover:bg-primary max-[970px]:hover:text-white  border-primary hover:bg-transparent border-solid border-2 hover:text-primary  text-white"
+                    ? "bg-primary max-[970px]:hover:bg-primary max-[970px]:hover:text-white  border-primary border-solid border-2   text-white"
                     : "border-primary max-[970px]:hover:bg-transparent max-[970px]:hover:text-primary border-solid border-2 hover:bg-primary hover:text-white text-primary"
                 } font-sans font-medium text-[14px] rounded-full`}
               >

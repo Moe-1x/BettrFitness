@@ -1,21 +1,34 @@
 import React from "react";
-
+import { useInView } from "react-intersection-observer";
 // Reusable Step Component
-const Step = ({ number, title, description }) => (
-  <div className="flex flex-col w-fit items-center">
-    <div className="w-[97px] h-[97px] flex justify-center items-center bg-primary text-white rounded-full font-cairo text-[48px] font-semibold">
-      {number}
+
+const Step = ({ number, title, description }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Ensure it triggers only once
+    threshold: 0.1, // Trigger when 10% of the component is visible
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`flex flex-col w-fit items-center transition-opacity duration-700 ${
+        inView ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div className="w-[97px] h-[97px] flex justify-center items-center bg-primary text-white rounded-full font-cairo text-[48px] font-semibold">
+        {number}
+      </div>
+      <div className="text-center mt-4">
+        <p className="max-[480px]:text-[42px] font-cairo font-bold text-[48px] leading-[1.2]">
+          {title}
+        </p>
+        <p className="font-cairo mt-3 font-medium max-[480px]:text-[16px] text-[20px] leading-relaxed">
+          {description}
+        </p>
+      </div>
     </div>
-    <div className="text-center mt-4">
-      <p className="max-[480px]:text-[42px] font-cairo font-bold text-[48px] leading-[1.2]">
-        {title}
-      </p>
-      <p className="font-cairo max-w-[300px] mt-3 font-medium max-[480px]:text-[16px] text-[20px] leading-relaxed">
-        {description}
-      </p>
-    </div>
-  </div>
-);
+  );
+};
 
 const JourneyAr = () => {
   return (
