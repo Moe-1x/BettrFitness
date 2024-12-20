@@ -6,11 +6,11 @@ const FooterAr = () => {
   return (
     <footer
       dir="rtl"
-      className="max-[970px]:text-center bg-black font-cairo text-white py-[84px]"
+      className="max-[1024px]:text-center bg-black font-cairo text-white py-[84px]"
     >
       <div className="container mx-auto px-4">
         {/* Footer Links Column */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-[36px] font-semibold mb-4">روابط</h3>
             <ul className=" text-[20px] ">

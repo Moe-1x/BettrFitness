@@ -4,10 +4,10 @@ import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
-    <footer className=" flex flex-col max-[970px]:text-center  bg-black font-sans text-white pb-[30px] pt-[84px]">
+    <footer className=" flex flex-col max-[1024px]:text-center  bg-black font-sans text-white pb-[30px] pt-[84px]">
       <div className=" mx-auto px-4">
         {/* Footer Links Column */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className=" w-fit">
             <h3 className="text-[36px] font-semibold mb-4">Links</h3>
             <ul className=" text-[20px] ">
