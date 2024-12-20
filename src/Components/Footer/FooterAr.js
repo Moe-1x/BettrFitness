@@ -6,12 +6,12 @@ const FooterAr = () => {
   return (
     <footer
       dir="rtl"
-      className="max-[1024px]:text-center bg-black font-cairo text-white py-[84px]"
+      className=" flex flex-col max-[1024px]:text-center font-cairo  bg-black text-white pb-[30px] pt-[84px]"
     >
-      <div className="container mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* Footer Links Column */}
-        <div className="max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+        <div className="grid max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className=" w-fit">
             <h3 className="text-[36px] font-semibold mb-4">روابط</h3>
             <ul className=" text-[20px] ">
               <li>
@@ -72,7 +72,7 @@ const FooterAr = () => {
           </div>
 
           {/* Social Media Column */}
-          <div>
+          <div className=" w-fit">
             <h3 className="text-[36px] font-semibold mb-4">تابعنا</h3>
             <ul className=" text-[20px]">
               <li>
@@ -97,7 +97,7 @@ const FooterAr = () => {
           </div>
 
           {/* Policies and Copyright Column */}
-          <div className="md:col-span-2 lg:col-span-1">
+          <div className="md:col-span-2 lg:col-span-1 w-fit">
             <h3 className="text-[36px] font-semibold mb-4">السياسات</h3>
             <ul className=" text-[20px]">
               <li>
@@ -109,11 +109,11 @@ const FooterAr = () => {
                 </Link>
               </li>
             </ul>
-            <div className="mt-6 text-[16px]">
-              <p>© 2024 BETTR fitness. جميع الحقوق محفوظة.</p>
-            </div>
           </div>
         </div>
+      </div>
+      <div className="mt-8 text-center text-[16px]">
+        <p>© 2024 BETTR fitness. All rights reserved.</p>
       </div>
     </footer>
   );
