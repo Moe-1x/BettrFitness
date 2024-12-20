@@ -1,9 +1,19 @@
-import React from "react";
+import { React, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const PoliciesAr = () => {
+  useEffect(() => {
+    // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div dir="rtl" className=" font-cairo container mx-auto px-4 py-16">
+        <div className=" right-0 relative mb-8">
+          <Link to="/ar" className="flex items-center text-primary text-lg">
+            <i className="fas fa-chevron-right text-[36px]"></i>
+          </Link>
+        </div>
         <h1 className="text-center text-4xl font-bold mb-8">
           سياسة الخصوصية والشروط
         </h1>
@@ -80,10 +90,12 @@ const PoliciesAr = () => {
           <p className="text-lg mt-4">
             "Bettr Fitness Personal Sport Coaching Services" تدير الموقع
             الإلكتروني{" "}
-            <a href="https://bettrfitness.com" className="text-primary">
+            <a
+              href="https://bettrfitness.com"
+              className=" underline text-primary"
+            >
               https://bettrfitness.com
             </a>{" "}
-            ("الموقع").
           </p>
 
           <h3 className="text-2xl font-medium mt-6 mb-2">

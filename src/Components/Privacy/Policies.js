@@ -1,8 +1,19 @@
-import React from "react";
+import { React, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Policies = () => {
+  useEffect(() => {
+    // Scroll to the top of the page on component mount
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="container font-sans mx-auto px-4 py-16">
+        <div className=" left-0 relative mb-8">
+          <Link to="/" className="flex items-center text-primary text-lg">
+            <i className="fas fa-chevron-left text-[36px]"></i>
+          </Link>
+        </div>
+
         <h1 className="text-center text-4xl font-bold mb-8">Policies</h1>
 
         <section className="mb-12">
@@ -84,12 +95,14 @@ const Policies = () => {
           </p>
           <p className="text-lg mt-4">
             "Bettr Fitness Personal Sport Coaching Services" maintains the{" "}
-            <a href="https://bettrfitness.com" className="text-primary">
+            <a
+              href="https://bettrfitness.com"
+              className="underline text-primary"
+            >
               https://bettrfitness.com
             </a>{" "}
-            Website ("Site").
+            Website.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">
             Cardholder Responsibility
           </h3>
@@ -100,7 +113,6 @@ const Policies = () => {
             and rules established by{" "}
             <span className="text-primary">Bettr Fitness</span>.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">
             Account Confidentiality
           </h3>
@@ -110,7 +122,6 @@ const Policies = () => {
             take necessary steps to prevent unauthorized access to their
             account.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">
             Country of Domicile
           </h3>
@@ -122,7 +133,6 @@ const Policies = () => {
             exclusively by a court of competent jurisdiction in{" "}
             <span className="text-primary">Egypt</span>.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">
             Accepted Payment Methods
           </h3>
@@ -131,7 +141,6 @@ const Policies = () => {
             <span className="text-primary">EGP (Egyptian Pounds)</span> will be
             accepted for payment.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">Minors</h3>
           <p className="text-lg">
             Customers under the age of 18 are{" "}
@@ -140,7 +149,6 @@ const Policies = () => {
             <span className="text-primary">not</span> transact on or use the
             website.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">
             Pricing and Currency
           </h3>
@@ -150,7 +158,6 @@ const Policies = () => {
             charged to the card will reflect in the cardholder’s currency as per
             their bank’s exchange rate.
           </p>
-
           <h3 className="text-2xl font-medium mt-6 mb-2">
             Payment Confirmation
           </h3>
