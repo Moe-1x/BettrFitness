@@ -9,8 +9,8 @@ const HeroAr = () => {
     >
       <div className="flex flex-col max-[970px]:items-center w-full gap-8">
         <h1 className="font-cairo max-[970px]:text-center font-extrabold text-[64px] max-[480px]:text-[42px]">
-          غير جسمك,
-          <br /> <span className="text-primary">من غير مجهود.</span>
+          حيث تلتقي اللياقة
+          <br /> <span className="text-primary">بأسلوب الحياة</span>
         </h1>
 
         <div className="flex relative gap-4 space-x-4 items-start">

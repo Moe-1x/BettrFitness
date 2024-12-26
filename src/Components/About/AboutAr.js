@@ -19,55 +19,42 @@ const AboutAr = () => {
       </div>
       <div className="flex justify-center flex-col mr-8 max-[970px]:mr-0 max-[970px]:items-center max-[970px]:text-center">
         <h2 className="font-cairo text-[48px] font-extrabold max-[970px]:text-[36px]">
-          ليه أنا{" "}
-          <span className="text-primary">
-            {" "}
-            الشخص <br />
-          </span>
-          اللي تشتغل معاه{" "}
+          ليه تختار <span className="text-primary">تشتغل معايا؟</span>
         </h2>
         <ul className="flex flex-col max-[970px]:list-none max-[970px]:gap-3 gap-7 list-disc ml-6 mt-[22px] max-[970px]:ml-0">
           <li className="font-cairo font-bold text-[20px]">
-            أنا تدربت على{" "}
+            عندي شغف كبير بالرياضة، وخبرة متنوّعة في مجالات زي{" "}
             <span className="text-primary">
-              الكاليسثينيكس، و الكيك بوكسينج <br />
-              والسباحة،{" "}
+              الكاليسثينيكس، الكيك بوكسينج، والسباحة.
             </span>{" "}
-            وده خلاني أكتسب خلفية رياضية متنوعة{" "}
+            التجارب دي ساعدتني أكتسب فهم عميق لكيفية تحقيق التوازن بين{" "}
+            <span className="text-primary">اللياقة البدنية والعقلية.</span>
           </li>
           <li className="font-cairo font-bold text-[20px]">
-            عندي خبرة <span className="text-primary">عشرة سنين، </span> وده
-            معناه إني عارف إيه اللي بينجح <br /> عشان تحقق{" "}
-            <span className="text-primary">نتائج حقيقية.</span>
+            مع خبرة أكتر من <span className="text-primary">10 سنين</span> في
+            المجال، بأقدّم لك خطط تدريب مخصصة تساعدك على تحقيق{" "}
+            <span className="text-primary">نتائج حقيقية ومستدامة.</span>
           </li>
           <li className="font-cairo font-bold text-[20px]">
-            هساعدك توصل{" "}
-            <span className="text-primary"> للياقة بدنية ممتازة</span> وأنت كمان
-            هتحسن <br /> <span className="text-primary">عقليتك</span> وتبني{" "}
-            <span className="text-primary">عادات دائمة.</span>
+            هدفي مش بس تحسين لياقتك البدنية، لكن مساعدتك على بناء{" "}
+            <span className="text-primary">عادات صحية</span> وتطوير طريقة{" "}
+            <span className="text-primary">تفكير إيجابية</span> تدوم معاك.
           </li>
           <li className="font-cairo font-bold text-[20px]">
-            أنا بدمج{" "}
-            <span className="text-primary">
-              التدريب البدني مع التغذية وتدريب العقل
-            </span>{" "}
-            عشان <br /> أساعدك تحقق{" "}
-            <span className="text-primary">أهدافك.</span>
+            لو مستعد للالتزام بتغيير إيجابي شامل، هيسعدني اني أكون شريكك في
+            الرحلة <span className="text-primary">خطوة بخطوة.</span>
           </li>
         </ul>
         <div>
-          {" "}
           <HashLink
             smooth
             to="#Plans"
             className=" mt-9 relative max-[970px]:left-1/2  max-[970px]:-translate-x-1/2 hover:text-primary hover:bg-transparent transition-all ease-in-out duration-700 text-white font-cairo font-bold text-[20px] px-[50px] py-[14px] border-2 border-solid border-primary bg-primary inline-block rounded-full
           max-[480px]:text-[14px] max-[480px]:px-[17px] max-[480px]:py-[10px] max-[480px]:text-center"
           >
-            اوصل لجسم احلامك!{" "}
+            اوصل لجسم احلامك!
           </HashLink>
         </div>
-
-        <div className=" flex flex-col"></div>
       </div>
     </section>
   );

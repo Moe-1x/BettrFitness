@@ -74,7 +74,7 @@ const PlanCardAr = ({
               key="static-3-month"
               className="w-[120px] h-[42px] border-primary border-solid border-2 max-[970px]:transition-none  bg-primary text-white font-cairo font-medium text-[14px] rounded-full"
             >
-              3 Month
+              3 شهور{" "}
             </button>
           )}
         </div>

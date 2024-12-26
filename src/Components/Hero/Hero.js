@@ -6,9 +6,9 @@ const Hero = () => {
     <section className="container relative grid grid-cols-2 max-[970px]:grid-cols-1 items-center pt-32">
       <div className="flex flex-col max-[970px]:items-center w-full gap-8">
         <h1 className="font-sans max-[970px]:text-center font-extrabold text-[64px] max-[480px]:text-[42px]">
-          Transform Your
-          <br /> Body,
-          <br /> <span className="text-primary">Effortlessly.</span>
+          Where Fitness
+          <br /> Meets
+          <br /> <span className="text-primary">Lifestyle.</span>
         </h1>
 
         <div className="flex relative gap-4 space-x-4 items-start">

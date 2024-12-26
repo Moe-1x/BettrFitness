@@ -1,7 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 // Reusable Step Component
-
 const Step = ({ number, title, description }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Ensure it triggers only once
@@ -44,7 +43,6 @@ const JourneyAr = () => {
 
       {/* Relative Container for Steps */}
       <div className="relative max-[1025px]:min-h-[0px] min-h-[3000px]">
-        {" "}
         {/* Adjust height appropriately */}
         {/* Center Vertical Line */}
         <div className="absolute hidden lg:block bg-black w-[2px] h-[2800px] left-1/2 transform -translate-x-1/2 top-0"></div>
@@ -79,16 +77,16 @@ const JourneyAr = () => {
               }
               description={
                 <>
-                  حدد مكالمة مدتها 20 دقيقة عشان نناقش
+                  بيتم تحديد مكالمة <br /> مدتها 20 دقيقة عشان نناقش
                   <span className="text-primary">
                     {" "}
-                    التحديات والأهداف الخاصة بيك،{" "}
-                  </span>{" "}
-                  <br />
-                  وده هيساعدنا نخصص لك{" "}
-                  <span className="text-primary">خطة تدريب</span> و <br />
-                  <span className="text-primary">تغذية</span> اكثر{" "}
-                  <span className="text-primary">فعاليه.</span>
+                    التحديات والأهداف الخاصة بيك
+                  </span>
+                  ,
+                  <br /> وده هيساعدنا نخصص لك{" "}
+                  <span className="text-primary">خطة تدريب</span> و
+                  <br /> <span className="text-primary">تغذية</span> أكثر{" "}
+                  <span className="text-primary">فعالية</span>.
                 </>
               }
             />
@@ -98,14 +96,13 @@ const JourneyAr = () => {
                 <>
                   التعديلات
                   <br />
-                  <span className="text-primary"> المنتظمة</span>
+                  <span className="text-primary">المنتظمة</span>
                 </>
               }
               description={
                 <>
-                  هتتعدل <span className="text-primary">خطتك </span> كل 5-10
-                  أيام <br />
-                  بناءً على
+                  بيتم تعديل الجدول كل 5-10 أيام <br />
+                  بناءً على{" "}
                   <span className="text-primary">ملاحظاتك وتقدمك.</span>
                 </>
               }
@@ -119,10 +116,9 @@ const JourneyAr = () => {
               title="الاستبيان"
               description={
                 <>
-                  هنبعتلك استبيان مفصل
+                  وسهل هنبعتلك استبيان مفصل
                   <br />
-                  <span className="text-primary">وسهل </span> عشان نفهمك <br />{" "}
-                  أكتر.
+                  عشان نفهم اهدافك و طبيعة يومك اكتر
                 </>
               }
             />
@@ -131,15 +127,16 @@ const JourneyAr = () => {
               title={
                 <>
                   خطة
-                  <span className="text-primary"> شخصية</span> <br />
+                  <span className="text-primary"> شخصية</span>
+                  <br />
                   ليك
                 </>
               }
               description={
                 <>
-                  هتستلم خطة تدريب وتغذية{" "}
-                  <span className="text-primary">مخصصة</span> <br />
-                  .لأسلوب حياتك{" "}
+                  هتستلم جدول تدريب وتغذية{" "}
+                  <span className="text-primary">مخصص</span>
+                  <br /> .لأسلوب حياتك
                 </>
               }
             />
@@ -147,15 +144,16 @@ const JourneyAr = () => {
               number="6"
               title={
                 <>
-                  <span className="text-primary">تحقيق</span> جسمك <br />
-                  <span className="text-primary">المثالي</span>
+                  الاستمرارية
+                  <br />
+                  <span className="text-primary">السر في النجاح</span>
                 </>
               }
               description={
                 <>
-                  مع هتفتح .
-                  <span className="text-primary">الاستمرارية والتدريب، </span>{" "}
-                  أقوى وأوثق <span className="text-primary">نسخة منك </span>
+                  الاستمرارية هي أهم عامل, <br />
+                  و احنا بنبقى جنبك خطوة بخطوة. <br />
+                  يا ترى جاهز للرحلة؟
                 </>
               }
             />
@@ -186,10 +184,9 @@ const JourneyAr = () => {
           title="الاستبيان"
           description={
             <>
-              هنبعتلك استبيان مفصل
+              وسهل هنبعتلك استبيان مفصل
               <br />
-              <span className="text-primary">وسهل </span> عشان نفهمك <br />{" "}
-              أكتر.
+              عشان نفهم اهدافك و طبيعة يومك اكتر
             </>
           }
         />
@@ -204,17 +201,16 @@ const JourneyAr = () => {
           }
           description={
             <>
-              حدد مكالمة مدتها 20 دقيقة عشان نناقش
+              بيتم تحديد مكالمة <br /> مدتها 20 دقيقة عشان نناقش
               <span className="text-primary">
                 {" "}
-                التحديات <br />
-                والأهداف الخاصة بيك،{" "}
-              </span>{" "}
-              <br />
-              وده هيساعدنا نخصص لك{" "}
-              <span className="text-primary">خطة تدريب</span> و <br />
-              <span className="text-primary">تغذية</span> اكثر{" "}
-              <span className="text-primary">فعاليه.</span>
+                التحديات والأهداف الخاصة بيك
+              </span>
+              ,
+              <br /> وده هيساعدنا نخصص لك{" "}
+              <span className="text-primary">خطة تدريب</span> و
+              <br /> <span className="text-primary">تغذية</span> أكثر{" "}
+              <span className="text-primary">فعالية</span>.
             </>
           }
         />
@@ -223,15 +219,16 @@ const JourneyAr = () => {
           title={
             <>
               خطة
-              <span className="text-primary"> شخصية</span> <br />
+              <span className="text-primary"> شخصية</span>
+              <br />
               ليك
             </>
           }
           description={
             <>
-              هتستلم خطة تدريب وتغذية{" "}
-              <span className="text-primary">مخصصة</span> <br />
-              .لأسلوب حياتك{" "}
+              هتستلم جدول تدريب وتغذية{" "}
+              <span className="text-primary">مخصص</span>
+              <br /> .لأسلوب حياتك
             </>
           }
         />
@@ -240,15 +237,14 @@ const JourneyAr = () => {
           title={
             <>
               التعديلات
-              <span className="text-primary"> المنتظمة</span> <br />
+              <span className="text-primary"> المنتظمة</span>
+              <br />
             </>
           }
           description={
             <>
-              هتتعدل <span className="text-primary">خطتك </span> كل 5-10 أيام{" "}
-              <br />
-              بناءً على
-              <span className="text-primary">ملاحظاتك وتقدمك.</span>
+              بيتم تعديل الجدول كل 5-10 أيام <br />
+              بناءً على <span className="text-primary">ملاحظاتك وتقدمك.</span>
             </>
           }
         />
@@ -256,15 +252,16 @@ const JourneyAr = () => {
           number="6"
           title={
             <>
-              <span className="text-primary">تحقيق</span> جسمك <br />
-              <span className="text-primary">المثالي</span>
+              الاستمرارية
+              <br />
+              <span className="text-primary">السر في النجاح</span>
             </>
           }
           description={
             <>
-              مع هتفتح .
-              <span className="text-primary">الاستمرارية والتدريب، </span> أقوى
-              وأوثق <span className="text-primary">نسخة منك </span>
+              الاستمرارية هي أهم عامل, <br />
+              و احنا بنبقى جنبك خطوة بخطوة. <br />
+              يا ترى جاهز للرحلة؟
             </>
           }
         />
