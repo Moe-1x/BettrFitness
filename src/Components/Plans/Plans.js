@@ -38,7 +38,7 @@ const Plans = () => {
         "All the Extra-Care benefits",
         "2 In-Person Workouts/Month",
         "Personal phone number for emergency calls",
-        "Freeze for 1 month",
+        "Freeze for 1 month ",
       ],
       specialNote: "Cairo/Giza only & 5 Spots Left",
     },
