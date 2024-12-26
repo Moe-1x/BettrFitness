@@ -16,7 +16,7 @@ const Plans = () => {
       ],
     },
     {
-      title: "Extra-Care",
+      title: "Extra-Care ",
       description:
         "Need answers or a little extra support on your journey? We've got you covered!",
       price: "2500",
