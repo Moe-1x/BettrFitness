@@ -131,7 +131,7 @@ const HeroAr = () => {
               }
               .wistia-container {
                 max-width: 100%;
-                max-height: 400px;
+                max-height: 600px;
                 height: auto;
                 display: flex;
                 align-items: center;
