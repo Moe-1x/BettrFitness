@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  background-color: rgb(223, 223, 223);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1d4e89;
+  border-radius: 50px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&display=swap");
