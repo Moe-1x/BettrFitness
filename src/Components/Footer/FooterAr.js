@@ -6,7 +6,7 @@ const FooterAr = () => {
   return (
     <footer
       dir="rtl"
-      className=" flex flex-col max-[1024px]:text-center font-cairo  bg-black text-white pb-[30px] pt-[84px]"
+      className=" flex flex-col max-[1024px]:text-center font-cairo mt-[166px]  bg-black text-white pb-[30px] pt-[84px]"
     >
       <div className=" mx-auto px-4">
         {/* Footer Links Column */}

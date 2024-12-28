@@ -1,28 +1,35 @@
 import React, { useEffect, useState } from "react";
 import "./Loading.css";
 
-const Loading = () => {
+const Loading = ({ lenis }) => {
   const [translateY, setTranslateY] = useState(false);
 
   useEffect(() => {
-    // Disable scroll when the component mounts
+    // Completely stop scrolling
+    const preventScroll = (e) => e.preventDefault();
+    window.addEventListener("scroll", preventScroll, { passive: false });
     document.body.style.overflow = "hidden";
+
+    if (lenis) lenis.stop();
 
     const timer = setTimeout(() => {
       setTranslateY(true);
 
       // Allow scroll after transition
       setTimeout(() => {
-        document.body.style.overflow = "auto";
+        if (lenis) lenis.start(); // Resume Lenis smooth scrolling
+        document.body.style.overflow = "auto"; // Unlock native scrolling
+        window.removeEventListener("scroll", preventScroll); // Remove listener
       }, 700); // Match transition duration
     }, 2000);
 
-    // Cleanup on unmount
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = "auto"; // Ensure reset
+      document.body.style.overflow = "auto";
+      if (lenis) lenis.start();
+      window.removeEventListener("scroll", preventScroll);
     };
-  }, []);
+  }, [lenis]);
 
   return (
     <div
@@ -43,17 +50,6 @@ const Loading = () => {
           d="M16.1016 29.0267L8.34229 14.4751L34.3704 0L56.7956 6.39542L16.1016 29.0267Z"
           fill="white"
         />
-        <mask
-          id="mask0_15_138"
-          style={{ maskType: "luminance" }}
-          maskUnits="userSpaceOnUse"
-          x="0"
-          y="21"
-          width="47"
-          height="30"
-        >
-          <path d="M0 21.8964H46.6442V50.1999H0V21.8964Z" fill="white" />
-        </mask>
         <path
           fillRule="evenodd"
           clipRule="evenodd"

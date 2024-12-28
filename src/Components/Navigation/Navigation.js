@@ -1,6 +1,7 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
 import Images from "../../Images";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   // Function to switch language dynamically
@@ -23,12 +24,16 @@ const Navigation = () => {
   return (
     <div className="mt-9 flex justify-between items-center px-2 container">
       <div className="flex items-center">
-        <img
-          src={Images.logo}
-          className="max-[480px]:w-[48px]"
-          draggable="false"
-          alt="logo"
-        />
+        <Link to="/">
+          {" "}
+          <img
+            src={Images.logo}
+            className="max-[480px]:w-[48px]"
+            draggable="false"
+            alt="logo"
+          />
+        </Link>
+
         <ul className="ml-[46px] max-[970px]:hidden flex gap-[20px] font-sans font-bold text-[20px]">
           <li>
             <HashLink

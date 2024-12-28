@@ -27,12 +27,15 @@ const Navigation = () => {
       className="mt-9 flex justify-between items-center px-2 container"
     >
       <div className="flex items-center">
-        <img
-          src={Images.logo}
-          className="max-[480px]:w-[48px]"
-          draggable="false"
-          alt="logo"
-        />
+        <Link to="/ar">
+          {" "}
+          <img
+            src={Images.logo}
+            className="max-[480px]:w-[48px]"
+            draggable="false"
+            alt="logo"
+          />
+        </Link>
         <ul className="ml-[46px] max-[970px]:hidden flex gap-[20px] font-cairo font-bold text-[20px]">
           <li>
             <HashLink smooth className="text-primary" to="#">
