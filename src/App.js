@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import {
   HashRouter as Router,
@@ -30,9 +30,9 @@ import PoliciesAr from "./Components/Privacy/PoliciesAr";
 
 function App() {
   const lenisRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -42,7 +42,9 @@ function App() {
     lenisRef.current = lenis;
 
     const handleScroll = (time) => {
-      lenis.raf(time);
+      if (!isLoading) {
+        lenis.raf(time);
+      }
       requestAnimationFrame(handleScroll);
     };
 
@@ -51,7 +53,7 @@ function App() {
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, [isLoading]);
 
   return (
     <Router>
@@ -59,11 +61,21 @@ function App() {
         <Route path="/" element={<Navigate to="/en" replace />} />
         <Route
           path="/en"
-          element={<EnglishVersion lenis={lenisRef.current} />}
+          element={
+            <EnglishVersion
+              lenis={lenisRef.current}
+              setIsLoading={setIsLoading}
+            />
+          }
         />
         <Route
           path="/ar"
-          element={<ArabicVersion lenis={lenisRef.current} />}
+          element={
+            <ArabicVersion
+              lenis={lenisRef.current}
+              setIsLoading={setIsLoading}
+            />
+          }
         />
         <Route
           path="/en/policies"
@@ -79,12 +91,12 @@ function App() {
   );
 }
 
-function EnglishVersion({ lenis }) {
+function EnglishVersion({ lenis, setIsLoading }) {
   return (
     <div>
-      <Loading lenis={lenis} />
+      <Loading lenis={lenis} setIsLoading={setIsLoading} />
       <Nav />
-      <Hero />
+      <Hero lenis={lenis} />
       <Reviews />
       <About />
       <Journey />
@@ -95,10 +107,10 @@ function EnglishVersion({ lenis }) {
   );
 }
 
-function ArabicVersion({ lenis }) {
+function ArabicVersion({ lenis, setIsLoading }) {
   return (
     <div>
-      <Loading lenis={lenis} />
+      <Loading lenis={lenis} setIsLoading={setIsLoading} />
       <NavAr />
       <HeroAr />
       <ReviewsAr />

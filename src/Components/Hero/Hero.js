@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 
-const Hero = () => {
+const Hero = ({ lenis }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -24,14 +24,27 @@ const Hero = () => {
     const overlay = document.getElementById("_popover_overlay");
 
     if (overlay) {
-      // Disable scrolling by setting overflow: hidden on body
+      // Disable scrolling by setting overflow: hidden on body and html
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden"; // Apply to html as well
+      document.body.style.position = "fixed"; // Lock the page in place
+
+      // Stop Lenis' scroll behavior
+      if (lenis) {
+        lenis.stop(); // Stop Lenis scroll behavior
+      }
 
       // Add event listener to detect when the overlay is removed
       const observer = new MutationObserver(() => {
         if (!document.getElementById("_popover_overlay")) {
           // Re-enable scrolling once the overlay is removed
-          document.body.style.overflow = "auto";
+          document.body.style.overflow = "auto"; // Restore scrolling
+          document.documentElement.style.overflow = "auto"; // Restore overflow for html
+          document.body.style.position = ""; // Reset position
+
+          if (lenis) {
+            lenis.start(); // Resume Lenis scroll behavior
+          }
           observer.disconnect(); // Stop observing
         }
       });

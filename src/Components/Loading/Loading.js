@@ -1,39 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "./Loading.css";
 
-const Loading = ({ lenis }) => {
+const Loading = ({ lenis, setIsLoading }) => {
   const [translateY, setTranslateY] = useState(false);
 
   useEffect(() => {
-    // Completely stop scrolling
-    const preventScroll = (e) => e.preventDefault();
-    window.addEventListener("scroll", preventScroll, { passive: false });
-    document.body.style.overflow = "hidden";
-
     if (lenis) lenis.stop();
 
     const timer = setTimeout(() => {
       setTranslateY(true);
 
-      // Allow scroll after transition
+      // Allow scrolling after transition
       setTimeout(() => {
-        if (lenis) lenis.start(); // Resume Lenis smooth scrolling
-        document.body.style.overflow = "auto"; // Unlock native scrolling
-        window.removeEventListener("scroll", preventScroll); // Remove listener
+        if (lenis) lenis.start();
+        setIsLoading(false); // Notify App that loading is complete
       }, 700); // Match transition duration
-    }, 2000);
+    }, 2000); // Simulate loading duration
 
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = "auto";
       if (lenis) lenis.start();
-      window.removeEventListener("scroll", preventScroll);
     };
-  }, [lenis]);
+  }, [lenis, setIsLoading]);
 
   return (
     <div
-      className={`bg-primary w-screen h-screen fixed top-0 left-0 z-10 flex justify-center items-center transition-transform duration-[500ms] ${
+      className={`bg-primary w-screen h-screen fixed top-0 left-0 z-10 flex justify-center items-center transition-transform duration-[700ms] ${
         translateY ? "translate-y-[100%]" : "translate-y-0"
       }`}
     >
