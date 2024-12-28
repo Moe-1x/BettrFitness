@@ -1,9 +1,11 @@
+import React, { useEffect } from "react";
 import {
   HashRouter as Router,
   Route,
   Routes,
   Navigate,
 } from "react-router-dom";
+import Lenis from "@studio-freight/lenis";
 
 import "./App.css";
 import About from "./Components/About/About";
@@ -29,19 +31,36 @@ import Policies from "./Components/Privacy/Policies";
 import PoliciesAr from "./Components/Privacy/PoliciesAr";
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Smooth scrolling duration
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      smooth: true,
+    });
+
+    const handleScroll = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(handleScroll);
+    };
+
+    requestAnimationFrame(handleScroll);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/en" replace />} />{" "}
-        {/* Redirect root to /en */}
+        <Route path="/" element={<Navigate to="/en" replace />} />
         <Route path="/en" element={<EnglishVersion />} />
         <Route path="/ar" element={<ArabicVersion />} />
-        <Route path="/en/*" element={<NotFoundEn />} /> {/* English 404 */}
-        <Route path="/ar/*" element={<NotFoundAr />} /> {/* Arabic 404 */}
-        <Route path="*" element={<Navigate to="/en" replace />} />{" "}
-        <Route path="/en/policies" element={<Policies />} />{" "}
-        <Route path="/ar/policies" element={<PoliciesAr />} />{" "}
-        {/* Default to English */}
+        <Route path="/en/*" element={<NotFoundEn />} />
+        <Route path="/ar/*" element={<NotFoundAr />} />
+        <Route path="*" element={<Navigate to="/en" replace />} />
+        <Route path="/en/policies" element={<Policies />} />
+        <Route path="/ar/policies" element={<PoliciesAr />} />
       </Routes>
     </Router>
   );
