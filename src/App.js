@@ -25,6 +25,8 @@ import PlansAr from "./Components/Plans/PlansAr";
 import ReviewsAr from "./Components/Reviews/ReviewsAr";
 import FAQSAr from "./Components/FAQS/FAQSAr";
 import FooterAr from "./Components/Footer/FooterAr";
+import Policies from "./Components/Privacy/Policies";
+import PoliciesAr from "./Components/Privacy/PoliciesAr";
 
 function App() {
   const lenisRef = useRef(null);
@@ -62,6 +64,14 @@ function App() {
         <Route
           path="/ar"
           element={<ArabicVersion lenis={lenisRef.current} />}
+        />
+        <Route
+          path="/en/policies"
+          element={<Policies lenis={lenisRef.current} />}
+        />
+        <Route
+          path="/ar/policies"
+          element={<PoliciesAr lenis={lenisRef.current} />}
         />
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
