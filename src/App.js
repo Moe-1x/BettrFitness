@@ -27,6 +27,8 @@ import FAQSAr from "./Components/FAQS/FAQSAr";
 import FooterAr from "./Components/Footer/FooterAr";
 import Policies from "./Components/Privacy/Policies";
 import PoliciesAr from "./Components/Privacy/PoliciesAr";
+import Checkout from "./Components/Checkout/Checkout";
+import CheckoutAr from "./Components/Checkout/CheckoutAr";
 
 function App() {
   const lenisRef = useRef(null);
@@ -84,6 +86,14 @@ function App() {
         <Route
           path="/ar/policies"
           element={<PoliciesAr lenis={lenisRef.current} />}
+        />
+        <Route
+          path="/en/checkout/:cardIndex"
+          element={<Checkout lenis={lenisRef.current} />}
+        />
+        <Route
+          path="/ar/checkout/:cardIndex"
+          element={<CheckoutAr lenis={lenisRef.current} />}
         />
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>

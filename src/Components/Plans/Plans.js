@@ -6,8 +6,8 @@ const Plans = () => {
     {
       title: "Essential",
       description: "Achieve your fitness goals with essential support!",
-      price: "1500",
-      buttonLabels: ["3 Month", "1 Month"],
+      price: { "1 Month": 1500, "3 Month": 3000 }, // Prices for 1 Month and 3 Month
+      buttonLabels: ["1 Month", "3 Month"],
       features: [
         "Answering questions on WhatsApp every 48 hours!",
         "Customized workout plans (Home & Gym)",
@@ -16,11 +16,11 @@ const Plans = () => {
       ],
     },
     {
-      title: "Extra-Care ",
+      title: "Extra-Care",
       description:
         "Need answers or a little extra support on your journey? We've got you covered!",
-      price: "2500",
-      buttonLabels: ["3 Month", "1 Month"],
+      price: { "1 Month": 2500, "3 Month": 5000 },
+      buttonLabels: ["1 Month", "3 Month"],
       features: [
         "All the essential plan benefits",
         "2 Video Calls/Month: Mindset and guidance for your journey!",
@@ -31,8 +31,7 @@ const Plans = () => {
       title: "Elite Athlete",
       description:
         "Experience exclusive in-person training, priority follow-ups, and a transformative approach to health.",
-
-      price: "15,000",
+      price: { "3 Month": 15000 }, // Only 3 Month for this plan
       buttonLabels: ["3 Month"],
       features: [
         "All the Extra-Care benefits",

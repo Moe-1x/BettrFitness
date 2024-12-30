@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Avoid horizontal scrolling */
-  overflow-y: visible; /* Allow vertical scrolling */
+  overflow-y: hidden; /* Allow vertical scrolling */
   scroll-behavior: auto; /* Disable native smooth scrolling */
 }
 

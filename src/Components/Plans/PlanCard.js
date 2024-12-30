@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Images from "../../Images";
+import { Link } from "react-router-dom";
 
 const PlanCard = ({
   title,
@@ -7,7 +8,6 @@ const PlanCard = ({
   price,
   buttonLabels,
   features,
-  footerText,
   specialNote,
   isLastCard,
   cardIndex,
@@ -19,21 +19,14 @@ const PlanCard = ({
   };
 
   const getPrice = () => {
-    if (isLastCard) {
-      return "15,000";
-    }
-    if (selectedPlan === "1 Month") {
-      return price;
-    } else if (selectedPlan === "3 Month") {
-      return price * 2;
-    }
+    return price[selectedPlan] || price["1 Month"]; // Get price based on selected plan
   };
 
   return (
     <div className="w-[calc(100%-30px)] mx-auto flex flex-col gap-5 py-8 px-8 min-h-[800px]  rounded-[32px] border-[#BCBCBC] border-2 border-solid relative">
-      {(cardIndex === 1 || cardIndex === 2) && selectedPlan === "3 Month" && (
+      {(cardIndex === 1 || cardIndex === 2) && (
         <div className="absolute top-[-10px] rounded-tl-[32px] rounded-tr-[32px] left-0 w-full text-center text-white bg-primary py-2 font-bold">
-          Save 35% of your money!
+          get 35% off on 3 month!
         </div>
       )}
 
@@ -96,9 +89,14 @@ const PlanCard = ({
         ))}
       </div>
       <div className="flex justify-center">
-        <a
-          target="_blank"
-          href="https://wa.link/evz1zz"
+        <Link
+          to={`/en/checkout/${cardIndex}`}
+          state={{
+            title,
+            description,
+            selectedPlan,
+            price: getPrice(),
+          }}
           className=" absolute bottom-[100px] mt-8 text-white font-sans font-bold text-[16px] px-[50px] w-fit py-[14px] bg-black inline-block 
                       before:bg-primary before:-z-10 before:left-0 before:top-0 before:absolute before:w-full before:h-full 
                       hover:before:left-[22%] hover:before:top-[27%] max-[970px]:hover:before:left-0 max-[970px]:hover:before:w-full hover:before:w-[80%] hover:before:h-[80%] 
@@ -106,7 +104,7 @@ const PlanCard = ({
                       max-[480px]:text-[14px] max-[480px]:px-[17px] max-[480px]:py-[10px] max-[480px]:text-center"
         >
           Start your journey
-        </a>
+        </Link>
       </div>
       {specialNote && (
         <div className="font-sans font-bold text-[13px] text-white flex justify-center items-center rounded-br-[32px] rounded-tl-[10px] bg-primary absolute right-0 bottom-0 w-[230px] h-[50px]">
