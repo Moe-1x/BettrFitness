@@ -89,16 +89,26 @@ function App() {
         />
         <Route
           path="/en/checkout/:cardIndex"
-          element={<Checkout lenis={lenisRef.current} />}
+          element={<ProtectedRoute component={Checkout} />}
         />
         <Route
           path="/ar/checkout/:cardIndex"
-          element={<CheckoutAr lenis={lenisRef.current} />}
+          element={<ProtectedRoute component={CheckoutAr} />}
         />
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
     </Router>
   );
+}
+
+function ProtectedRoute({ component: Component }) {
+  const locationState = window.history.state?.usr;
+
+  if (!locationState) {
+    return <Navigate to="/en" replace />;
+  }
+
+  return <Component />;
 }
 
 function EnglishVersion({ lenis, setIsLoading }) {
