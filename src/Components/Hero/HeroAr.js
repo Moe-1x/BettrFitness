@@ -24,10 +24,15 @@ const HeroAr = ({ lenis }) => {
     const overlay = document.getElementById("_popover_overlay");
 
     if (overlay) {
-      // Disable scrolling by setting overflow: hidden on body and html
+      // Save the current scroll position
+      const scrollPosition = window.scrollY;
+
+      // Lock the page scrolling by setting overflow: hidden on body and html
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden"; // Apply to html as well
       document.body.style.position = "fixed"; // Lock the page in place
+      document.body.style.top = `-${scrollPosition}px`; // Offset the body to preserve the scroll position
+      document.body.style.width = "100%"; // Prevent horizontal scroll
 
       // Stop Lenis' scroll behavior
       if (lenis) {
@@ -41,15 +46,21 @@ const HeroAr = ({ lenis }) => {
           document.body.style.overflow = "auto"; // Restore scrolling
           document.documentElement.style.overflow = "auto"; // Restore overflow for html
           document.body.style.position = ""; // Reset position
+          document.body.style.top = ""; // Remove the scroll offset
+          document.body.style.width = ""; // Reset width
+
+          // Restore the scroll position
+          window.scrollTo(0, scrollPosition);
 
           if (lenis) {
             lenis.start(); // Resume Lenis scroll behavior
           }
+
           observer.disconnect(); // Stop observing
         }
       });
 
-      // Start observing changes to the DOM
+      // Start observing changes to the DOM to detect when the popover is removed
       observer.observe(document.body, { childList: true, subtree: true });
     }
   };
