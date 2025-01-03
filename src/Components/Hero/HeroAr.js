@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 
-const HeroAr = ({ lenis }) => {
+const Hero = ({ lenis }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -190,4 +190,4 @@ const HeroAr = ({ lenis }) => {
   );
 };
 
-export default HeroAr;
+export default Hero;

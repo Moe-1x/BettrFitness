@@ -63,7 +63,7 @@ const Checkout = () => {
             postal_code: "12345",
             state: "Cairo",
           },
-          integration_id: "4914360",
+          integration_id: "4914324",
         }
       );
 
@@ -166,11 +166,13 @@ const Checkout = () => {
             </button>
           </form>
         ) : (
-          <iframe
-            src={paymobIframe}
-            title="Paymob Payment"
-            className="w-full h-full border-0"
-          ></iframe>
+          <div className=" flex items-center justify-center h-full">
+            <iframe
+              src={paymobIframe}
+              title="Paymob Payment"
+              className="w-full h-full border-0"
+            ></iframe>
+          </div>
         )}
       </div>
     </div>
