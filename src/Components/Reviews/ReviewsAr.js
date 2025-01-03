@@ -1,53 +1,70 @@
 import React from "react";
 
-const ReviewsAr = () => {
+const Reviews = () => {
   return (
     <section id="Reviews" className="mt-[166px] py-16 container">
       <h2 className="text-center font-cairo max-[480px]:text-[42px] text-[48px] font-extrabold">
         اراء بعض <span className="text-primary"> عملائنا </span>
       </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
-        <div className="space-y-8 ">
-          <div className="relative  w-full max-[970px]:w-[100%] left-1/2 -translate-x-1/2 aspect-w-16 aspect-h-9">
-            <iframe
-              className="max-[970px]:w-[95%] relative left-1/2  w-full -translate-x-1/2 h-full rounded-[20px] max-[1024px]:min-h-[700px]  min-h-[275px]"
-              src="https://www.youtube.com/embed/example1"
-              title="Video 1"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute pl-4 pb-4 bottom-0 left-0 text-white text-[16px] font-cairo font-medium">
-              Seif El-Masry - Egypt{" "}
-            </div>
-          </div>
-          <div className="relative max-[970px]:w-[98%]  w-full left-1/2 -translate-x-1/2 aspect-w-16 aspect-h-9">
-            <iframe
-              className="max-[970px]:w-[95%]  w-full relative left-1/2 -translate-x-1/2  h-full rounded-[20px] max-[1024px]:min-h-[700px]  min-h-[275px]"
-              src="https://www.youtube.com/embed/example2"
-              title="Video 2"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute bottom-0 pl-4 pb-4 left-0 text-white text-[16px] font-cairo font-medium">
-              Ahmed - Egypt{" "}
-            </div>
+      <div className="flex flex-wrap justify-center gap-8 max-[1300px]:flex-col items-center mt-10">
+        {/* Video 1: Eyad */}
+        <div className="relative w-full sm:w-[300px] md:w-[350px] lg:w-[400px]">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script
+            src="https://fast.wistia.com/embed/plptemlboq.js"
+            async
+            type="module"
+          ></script>
+          <style>
+            {`wistia-player[media-id='plptemlboq']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/plptemlboq/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }`}
+          </style>
+          <wistia-player
+            className="h-auto w-[full]"
+            media-id="plptemlboq"
+          ></wistia-player>
+          <div className="absolute bottom-2 left-2 text-white text-[16px] font-sans font-medium">
+            Eyad Ashraf - Giza, Eg
           </div>
         </div>
 
-        <div className="col-span-1 lg:col-span-2 left-1/2 -translate-x-1/2 w-full max-[970px]:w-[98%] aspect-w-16 aspect-h-9 relative">
-          <iframe
-            className="max-[970px]:w-[95%]  w-full relative left-1/2 -translate-x-1/2  h-full max-[1024px]:min-h-[700px]  rounded-[20px] "
-            src="https://www.youtube.com/embed/example3"
-            title="Video 3"
-            frameBorder="0"
-            allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          <div className="absolute bottom-2 pl-4 pb-4 left-2 max-[1024px]:text-[16px] text-white text-[24px] font-cairo font-medium">
-            Ahmed Farag - US{" "}
+        {/* Video 2: Ahmed */}
+        <div className="relative w-full sm:w-[300px] md:w-[350px] lg:w-3400px]">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script
+            src="https://fast.wistia.com/embed/0s0ehbud5v.js"
+            async
+            type="module"
+          ></script>
+          <style>
+            {`wistia-player[media-id='0s0ehbud5v']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/0s0ehbud5v/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }`}
+          </style>
+          <wistia-player
+            className="h-auto w-[full]"
+            media-id="0s0ehbud5v"
+          ></wistia-player>
+          <div className="absolute bottom-2 left-2 text-white text-[16px] font-sans font-medium">
+            Ahmed Farag - Texas, US
+          </div>
+        </div>
+
+        {/* Video 3: Seif */}
+        <div className="relative w-full sm:w-[300px] md:w-[350px] lg:w-[400px]">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script
+            src="https://fast.wistia.com/embed/p6w53039ro.js"
+            async
+            type="module"
+          ></script>
+          <style>
+            {`wistia-player[media-id='p6w53039ro']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p6w53039ro/swatch'); display: block; filter: blur(5px); padding-top:177.78%; }`}
+          </style>
+          <wistia-player
+            className="h-auto w-[full]"
+            media-id="p6w53039ro"
+          ></wistia-player>
+          <div className="absolute bottom-2 left-2 text-white text-[16px] font-sans font-medium">
+            Seif El-masry - Alex, Eg
           </div>
         </div>
       </div>
@@ -55,4 +72,4 @@ const ReviewsAr = () => {
   );
 };
 
-export default ReviewsAr;
+export default Reviews;

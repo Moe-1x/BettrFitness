@@ -64,10 +64,11 @@ const HeroAr = ({ lenis }) => {
       observer.observe(document.body, { childList: true, subtree: true });
     }
   };
+
   return (
     <section
       dir="rtl"
-      className="container relative gap-8 grid grid-cols-2 max-[970px]:grid-cols-1 items-center pt-32"
+      className="container relative grid grid-cols-2 max-[970px]:grid-cols-1 items-center pt-32 gap-8"
     >
       <div className="flex flex-col max-[970px]:items-center w-full gap-8">
         <h1 className="font-cairo max-[970px]:text-center font-extrabold text-[64px] max-[480px]:text-[42px]">
@@ -76,7 +77,6 @@ const HeroAr = ({ lenis }) => {
         </h1>
 
         <div className="flex relative gap-4 space-x-4 items-start">
-          {/* Explore Plans Button */}
           <HashLink
             smooth
             to="#Plans"
@@ -86,19 +86,16 @@ const HeroAr = ({ lenis }) => {
             استكشف الباقات
           </HashLink>
 
-          {/* Free Consultation Button + Got Questions */}
           <div className="flex flex-col items-center">
-            <a
-              target="_blank"
-              href="https://wa.link/evz1zz"
+            <HashLink
+              rel="noopener noreferrer"
+              smooth
+              to="#Reviews"
               className="relative hover:bg-primary hover:text-white transition-all ease-in-out duration-700 text-primary font-cairo font-bold text-[16px] px-[50px] py-[14px] border-2 border-solid border-primary inline-block rounded-full
                        max-[480px]:text-[14px] max-[480px]:px-[17px] max-[480px]:py-[10px] max-[480px]:text-center"
             >
-              استشاره مجانيه
-            </a>
-            <p className="mt-2  transition-all ease-in-out duration-700 text-[16px] font-bold text-left underline">
-              عندك اسأله؟
-            </p>
+              المراجعات
+            </HashLink>
           </div>
         </div>
 
@@ -111,6 +108,7 @@ const HeroAr = ({ lenis }) => {
           </p>
         </div>
       </div>
+
       <div className="flex justify-center h-full items-center md:w-full md:mt-8">
         {isMobile ? (
           // Mobile-specific video code
